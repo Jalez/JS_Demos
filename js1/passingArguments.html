@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <button type="submit">Submit button</button>
+  </form>
+  <script>
+
+    // Using an anonymous function with parameters:
+    // const form = document.querySelector('form');
+    // form.addEventListener('submit', (event) => {
+    //   const arg1 = 'foo';
+    //   const arg2 = 'bar';
+    //   submitHandler(event, arg1, arg2);
+    // });
+
+    // function submitHandler(event, arg1, arg2) {
+    //   console.log(arg1, arg2);
+    //   event.preventDefault();
+    // }
+
+    const obj = {
+      name: 'John',
+      age: 30,
+      greet: function () {
+        console.log('Hello, my name is ' + this.name);
+      }
+    }
+    // Using bind:
+    // const form = document.querySelector('form');
+    // form.addEventListener('submit', submitHandler.bind(null, 'foo', 'bar'));
+
+    // function submitHandler(arg1, arg2, event) {
+    //   // console.log(this)
+    //   console.log(arg1, arg2);
+    //   event.preventDefault();
+    // }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="outer" style="padding:20px; background-color: yellow">
+    <div id="inner" style="padding: 20px;background-color: aqua;">
+      <button id="btn">Click me</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById("outer").addEventListener("click", function (event) {
+      console.log("event listener 1")
+      console.log(event.target.id); // "btn" if you click the button
+      console.log(event.currentTarget.id); // "outer" always
+      event.stopPropagation();
+    }, true);
+
+    document.getElementById("inner").addEventListener("click", function (event) {
+      console.log("event listener 2")
+      console.log(event.target.id); // "btn" if you click the button
+      console.log(event.currentTarget.id); // "inner" if you click the button
+    });
+
+    document.getElementById("btn").addEventListener("click", function (event) {
+      console.log("event listener 3")
+      console.log(event.target.id); // "btn"
+      console.log(event.currentTarget.id); // "btn"
+    });
+
+  </script>
+</body>
+
+</html>
